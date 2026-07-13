@@ -1,4 +1,6 @@
-FROM registry.gitlab.steamos.cloud/steamrt/sniper/sdk
+FROM registry.gitlab.steamos.cloud/steamrt/steamrt4/sdk/arm64
+
+ENV ARCH=aarch64
 
 RUN apt-get update && apt-get install -y \
     file \
