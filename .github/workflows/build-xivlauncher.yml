@@ -49,9 +49,13 @@ jobs:
           git push origin ${{ steps.tag.outputs.tag }}
 
       - name: Build container image
+        env:
+          JUST_PLATFORM: linux/arm64
         run: just build-image
 
       - name: Build XIVLauncher AppImage
+        env:
+          JUST_PLATFORM: linux/arm64
         run: just build xivlauncher
 
       - name: Upload AppImage artifacts
